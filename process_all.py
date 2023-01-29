@@ -1,6 +1,6 @@
 
 file = open("raw_data.txt", "r")
-# tách các dòng của toán bộ thứ sinh  
+
 datas = file.read().split("\n")
 
 with open("final_process.txt", encoding="utf8", mode="w") as file:
@@ -73,9 +73,9 @@ for data in datas:
             name = name[:i] + chr(int(name[i+2:i+5])) + name[i+6:]
 
     for i in range(len(score)):
-        if score[i:i+2] == "&#": # để lấy ra cái đuôi số (192 195) sau đó dùng hàm chr để chuyển về dạng chữ bth 
+        if score[i:i+2] == "&#": 
             score = score[:i] + chr(int(score[i+2:i+5])) + score[i+6:] 
-    # đoạn đầu là từ đầu cho đến ký tự &# đoạn sau là chuyển về hàm chr và cuối cùng là đoạn còn lại 
+    
     name = name.title()
     score = score.lower()
 
