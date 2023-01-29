@@ -31,10 +31,10 @@ for z in range(len(data)):
     data[z] = data[z].strip()
     if data[z] != "":
         unempty_line.append(data[z])
-data = unempty_line # cho unempty vừa mới bỏ dòng trắng bắng cái data cần lưu 
+data = unempty_line
 
-name = data[7] # bắt đầu từ dòng số 7 là có tên cần tìm 
-date_of_birth = data [8] # laasy ngay sinh 
+name = data[7] #  tên cần tìm 
+date_of_birth = data [8] #  ngay sinh 
 score = data[9] # lay diem 
 
 # change the unicode to the regular letter 
@@ -63,11 +63,11 @@ for i in range(len(name)):
 for i in range(len(score)):
     if score[i:i+2] == "&#": # để lấy ra cái đuôi số (192 195) sau đó dùng hàm chr để chuyển về dạng chữ bth 
         score = score[:i] + chr(int(score[i+2:i+5])) + score[i+6:] 
-# đoạn đầu là từ đầu cho đến ký tự &# đoạn sau là chuyển về hàm chr và cuối cùng là đoạn còn lại 
+
 name = name.title()
 score = score.lower()
 
-#chia data_of_birth ra từng cái ngày tháng năm sinh 
+
 dob_list = date_of_birth.split("/")
 dd = int(dob_list[0]) # ngay sinh 
 mm = int(dob_list[1]) # thang sinh 
